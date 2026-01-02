@@ -48,3 +48,7 @@ class TestDivide:
     def test_divide_by_zero_raises_error(self):
         with pytest.raises(ValueError, match="Cannot divide by zero"):
             divide(10, 0)
+
+    def test_this_should_fail(self):
+        """This test is designed to fail."""
+        assert divide(10, 2) == 9999
