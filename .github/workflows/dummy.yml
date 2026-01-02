@@ -1,4 +1,4 @@
-name: Dummy Workflow
+name: Python Tests
 
 on:
   push:
@@ -9,13 +9,21 @@ on:
       - main
 
 jobs:
-  dummy-job:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Run a dummy script
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
         run: |
-          echo "This is a dummy job to generate events."
-          echo "Run ID: $GITHUB_RUN_ID"
+          python -m pip install --upgrade pip
+          pip install pytest
+
+      - name: Run tests
+        run: pytest test_calculator.py -v
