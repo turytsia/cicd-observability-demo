@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY calculator.py .
 
-CMD ["python", "-c", "from calculator import add; print('Calculator ready!')"]
+CMD ["sh", "-c", "echo 'Calculator ready!' && sleep infinity"]
