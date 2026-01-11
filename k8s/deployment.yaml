@@ -16,5 +16,5 @@ spec:
     spec:
       containers:
         - name: demo-app
-          image: docker.io/aturytsia/demo-app:7fd52f2dc8ce1aed0cfcc85c78cd5d00c108edbf
+          image: docker.io/aturytsia/demo-app:1897d2cbcaaef4b245481cac0b33241b3bc00f39
           imagePullPolicy: Always
