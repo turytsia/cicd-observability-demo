@@ -45,5 +45,5 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          push: true 
+          push: true  
           tags: ${{ secrets.DOCKER_USERNAME }}/demo-app:${{ github.sha }}
